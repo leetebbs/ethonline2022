@@ -1,6 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.send{
+  width: 25px;
+  height: 25px;
+}
+
+.logo{
+  font-family: 'Satisfy', cursive;
+}
+
 .App {
   text-align: center;
+  justify-content: center;
 }
+
+.postImage{
+  width:300px;
+
+}
+.descipt{
+  width:300px;
+ 
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .App-logo {
   height: 40vmin;
