@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+.body{
+  font-family: 'Roboto', sans-serif;
+  
+}
+
 .nav{
   display: flex;
   align-items: center;
@@ -8,10 +13,39 @@
 .send{
   width: 25px;
   height: 25px;
+  padding-left: 15px;
+}
+.add{
+  width: 25px;
+  height: 25px;
+  padding-left: 15px;
+}
+.nav{
+  background-color: white;
+  height:60px;
+  border-color: #282c34;
+  
+}
+
+.search-icon{
+  margin-left: 10px;
+}
+
+.search{
+  width:250px;
+  height:35px;
+  background-color: #e1e4e4;
+  border-radius: 10px;
+  margin-right: 100px;
+  margin-left: 170px;
+  display: flex;
+  align-items: center;
 }
 
 .logo{
   font-family: 'Satisfy', cursive;
+  padding-right: 50px;
+  padding-left: 10px;
 }
 
 .App {
@@ -25,6 +59,7 @@
 }
 .descipt{
   width:300px;
+  font-weight: bold;
  
 }
 
@@ -34,7 +69,10 @@
   justify-content: center;
 }
 
+.content{
 
+
+}
 
 .App-logo {
   height: 40vmin;
