@@ -53,6 +53,10 @@
   justify-content: center;
 }
 
+.image{
+  width:300px;
+}
+
 .postImage{
   width:300px;
 

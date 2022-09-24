@@ -3,6 +3,11 @@ import Navbar from "./components/Navbar";
 import Fetchmessages from "./pages/fetchmessages"
 import Createmessage from "./pages/createmessage"
 import Ipfstest from "./pages/ipfstest.js"
+import CharactersList from "./pages/charactersList"
+import LensRecommendedProfiles from "./pages/lensProfiles"
+import GetProfile from "./pages/getProfile"
+
+
 
 function App() {
 
@@ -12,9 +17,12 @@ function App() {
       <Navbar />
       <div className="container">
         <div className="App">
-          <Fetchmessages/>
+          {/* <Fetchmessages/> */}
           {/* <Createmessage/> */}
           {/* <Ipfstest/> */}
+          {/* <CharactersList /> */}
+          {/* <LensRecommendedProfiles /> */}
+          <GetProfile />
         </div>
       </div>
     </>
