@@ -14,7 +14,7 @@ const Contract = new ethers.Contract(contractAddress, Abi, provider);
 const withSigner = Contract.connect(signer);
 const payment = (0.01).toString(16);
 console.log(payment);
-const id = 4;
+const id = 7;
 
 function Fetchmessages() {
   const [image, setImage] = useState();
@@ -38,7 +38,7 @@ function Fetchmessages() {
         console.log("DEscri", description)
         console.log("Data ", number);
         let allTips = data.tipAmount;
-        let tipamount = parseInt(allTips, 16) / 10 **18;
+        let tipamount = parseInt(allTips, 10) / 10 **18;
         setTips(tipamount);
         console.log("tip ammount ", tipamount);
         console.log(data);
