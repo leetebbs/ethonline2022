@@ -2,7 +2,7 @@ import { useQuery, gql } from '@apollo/client'
 
 const GET_PROFILE = gql `
 query Profile {
-    profile(request: { handle: "tebbo.test" }) {
+    profile(request: { handle: "lensprotocol.test" }) {
       id
       name
       bio

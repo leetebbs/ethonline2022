@@ -10,13 +10,25 @@ export default function LensRecommendedProfiles() {
   return (
     <div className="charactersList">
       {data.recommendedProfiles.map((recommendedProfile) => {
-        return (
-          <div>
-            <h2>{recommendedProfile.id}</h2>
-            <h3>{recommendedProfile.handle}</h3>
-            <h3>{recommendedProfile.stats.totalFollowers}</h3>
-          </div>
-        );
+        if(recommendedProfile.picture){
+          return (
+            <div >
+              <h2>{recommendedProfile.id}</h2>
+              <h3>{recommendedProfile.handle}</h3>
+              <img className="image" src={recommendedProfile.picture.original.url}></img>
+              <h3>Total Followers {recommendedProfile.stats.totalFollowers} </h3>
+            </div>
+          );
+        }else{
+          return (
+            <div>
+              <h2>{recommendedProfile.id}</h2>
+              <h3>{recommendedProfile.handle}</h3>
+              <h3>Total Followers {recommendedProfile.stats.totalFollowers} </h3>
+            </div>
+          );
+        }
+
       })}
     </div>
   );

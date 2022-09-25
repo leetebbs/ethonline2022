@@ -5,6 +5,11 @@
   
 }
 
+.bannerImage{
+  width:80%;
+  margin-top: 20px;
+  
+}
 .nav{
   display: flex;
   align-items: center;
@@ -54,7 +59,9 @@
 }
 
 .image{
-  width:300px;
+  width:200px;
+  height:200px;
+  border-radius: 50%;
 }
 
 .postImage{
@@ -110,5 +117,37 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .search-icon{
+    margin-left: 10px;
+  }
+  
+  .search{
+display:none;
+  }
+  
+  .logo{
+    font-family: 'Satisfy', cursive;
+    padding-right: 50px;
+    padding-left: 10px;
+  }
+
+  .container{
+    margin:10px;
+    border-style: solid;
+  }
+
+  .bannerImage{
+    width:90%;
+    
+  }
+
+  .profile-container{
+    border-width:10px ;
+
   }
 }

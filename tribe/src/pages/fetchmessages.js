@@ -3,7 +3,7 @@ import { ethers, BigNumber } from "ethers";
 import react from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import { useGetProfile } from "../hooks/useGetProfile";
 
 const Abi = require("../Tribe.json");
 const contractAddress = "0x8116F2FA730058bCFc9A0e46f105F9B0A4ed252F"; //on rinkeby
@@ -12,9 +12,7 @@ const accounts = provider.send("eth_requestAccounts", []);
 const signer = provider.getSigner();
 const Contract = new ethers.Contract(contractAddress, Abi, provider);
 const withSigner = Contract.connect(signer);
-const payment = (0.01).toString(16);
-console.log(payment);
-const id = 7;
+const id = 9;
 
 function Fetchmessages() {
   const [image, setImage] = useState();
@@ -26,15 +24,16 @@ function Fetchmessages() {
     async function fetchData() {
       try {
         const data = await Contract.images(id);
-        setImage("https://" + data.hash + ".ipfs.w3s.link/image");
+        setImage( data.hash );
         console.log("image address", image)
         let likes = data.likes;
         let number = parseInt(likes, 16);
         setNumber(number);
-        let url = "https://"+ data.description + ".ipfs.w3s.link/Description";
+        console.log(data.description) /// look into reteivinf description data 
+        let url = data.description;
         const getDescription = await axios.get(url)
-        console.log(getDescription.data)
-        setDescription(getDescription.data);
+        console.log(getDescription.data.description)
+        setDescription(getDescription.data.description);
         console.log("DEscri", description)
         console.log("Data ", number);
         let allTips = data.tipAmount;

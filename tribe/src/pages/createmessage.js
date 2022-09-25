@@ -34,15 +34,17 @@ async function ipfsUpload(){
       new File([image], 'image')
     ]
     const cid = await client.put(imageFile)
-    setImagecid(cid)
-    console.log('image stored at cid ', cid)
+    let imageuri = "https://" + cid + ".ipfs.w3s.link/image";
+    setImagecid(imageuri)
+    console.log('image stored at cid ', imageuri)
     const descFile = [
       //new File(['contents-of-file-1'], 'plain-utf8.txt'),
       new File([desc], 'Description')
     ]
 
     const descriptioncid = await client.put(descFile)
-    setDesccid(descriptioncid)
+    let descriptionUri = "https://" + descriptioncid + ".ipfs.w3s.link/Description";
+    setDesccid(descriptionUri)
     console.log('stored files with cid:', desccid)
 
     send()

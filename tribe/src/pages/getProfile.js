@@ -8,14 +8,19 @@ export default function GetProfile({account}) {
   }
   console.log({ error, loading, data });
   const url = data.profile.picture.original.url;
-  const newUrl = "https" + url.slice(4) + ".ipfs.dweb.link";
+  //const newUrl = "https" + url.slice(4) + ".ipfs.dweb.link";
+  const newUrl = url;
 //   console.log("profile account", account)
 
   return (
-    <div className="charactersList">
+    <div className="profile-container">
+      <img className="bannerImage" src={data.profile.coverPicture.original.url}></img>
       <h2>{data.profile.handle}</h2>
       <img className="image" src={newUrl}></img>
-      <h3>{account}</h3>
+      <p>{data.profile.bio}</p>
+      <h3>Followers {data.profile.stats.totalFollowers}</h3>
+      <h3>Following {data.profile.stats.totalFollowing}</h3>
+      <h3>Posts {data.profile.stats.totalPosts}</h3>
     </div>
   );
 }
